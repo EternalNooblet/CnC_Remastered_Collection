@@ -827,6 +827,7 @@ void Log_End_Nest_Time( char *string );
 **	PROFILE.CPP
 */
 int WWGetPrivateProfileInt(char const *section, char const *entry, int def, char *profile);
+float WWGetPrivateProfileFloat(char const* section, char const* entry, double def, char* profile);
 bool WWWritePrivateProfileInt(char const *section, char const *entry, int value, char *profile);
 bool WWWritePrivateProfileString(char const *section, char const *entry, char const *string, char *profile);
 char * WWGetPrivateProfileString(char const *section, char const *entry, char const *def, char *retbuffer, int retlen, char const * profile);

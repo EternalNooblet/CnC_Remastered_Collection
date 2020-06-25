@@ -110,6 +110,50 @@ typedef enum {
 
 
 
+void Falsify_Information(void)
+{
+	char* buffer;							// INI staging buffer pointer.
+	buffer = (char*)_ShapeBuffer;
+	memset(buffer, '\0', _ShapeBufferSize);
+
+	CCFileClass file("SYOD.INI");
+	if (!file.Is_Available()) {
+		// this completely disables any more meddling unless the INI file is present
+		return;
+	} else {
+		file.Read(buffer, _ShapeBufferSize - 1);
+	}
+	file.Close();
+
+	// should be able to set enabled = yes in INI, otherwise use stock game settings from .MEG
+	bool customDifficultyEnabled = WWGetPrivateProfileInt("Options", "Enabled", 1, buffer) == 1;
+	if (customDifficultyEnabled) {
+		// force original launch day hard mode settings, default to 1.0
+		Rule.Diff[0].FirepowerBias = float(WWGetPrivateProfileFloat("Difficulty", "Casual_FirepowerBias", 1, buffer));
+		Rule.Diff[0].GroundspeedBias = float(WWGetPrivateProfileFloat("Difficulty", "Casual_GroundspeedBias", 1, buffer));
+		Rule.Diff[0].AirspeedBias = float(WWGetPrivateProfileFloat("Difficulty", "Casual_AirspeedBias", 1, buffer));
+		Rule.Diff[0].ArmorBias = float(WWGetPrivateProfileFloat("Difficulty", "Casual_ArmorBias", 1, buffer));
+		Rule.Diff[0].ROFBias = float(WWGetPrivateProfileFloat("Difficulty", "Casual_ROFBias", 1, buffer));
+		Rule.Diff[0].CostBias = float(WWGetPrivateProfileFloat("Difficulty", "Casual_CostBias", 1, buffer));
+
+		Rule.Diff[1].FirepowerBias = float(WWGetPrivateProfileFloat("Difficulty", "Normal_FirepowerBias", 1, buffer));
+		Rule.Diff[1].GroundspeedBias = float(WWGetPrivateProfileFloat("Difficulty", "Normal_GroundspeedBias", 1, buffer));
+		Rule.Diff[1].AirspeedBias = float(WWGetPrivateProfileFloat("Difficulty", "Normal_AirspeedBias", 1, buffer));
+		Rule.Diff[1].ArmorBias = float(WWGetPrivateProfileFloat("Difficulty", "Normal_ArmorBias", 1, buffer));
+		Rule.Diff[1].ROFBias = float(WWGetPrivateProfileFloat("Difficulty", "Normal_ROFBias", 1, buffer));
+		Rule.Diff[1].CostBias = float(WWGetPrivateProfileFloat("Difficulty", "Normal_CostBias", 1, buffer));
+
+		Rule.Diff[2].FirepowerBias = float(WWGetPrivateProfileFloat("Difficulty", "Hard_FirepowerBias", 1, buffer));
+		Rule.Diff[2].GroundspeedBias = float(WWGetPrivateProfileFloat("Difficulty", "Hard_GroundspeedBias", 1, buffer));
+		Rule.Diff[2].AirspeedBias = float(WWGetPrivateProfileFloat("Difficulty", "Hard_AirspeedBias", 1, buffer));
+		Rule.Diff[2].ArmorBias = float(WWGetPrivateProfileFloat("Difficulty", "Hard_ArmorBias", 1, buffer));
+		Rule.Diff[2].ROFBias = float(WWGetPrivateProfileFloat("Difficulty", "Hard_ROFBias", 1, buffer));
+		Rule.Diff[2].CostBias = float(WWGetPrivateProfileFloat("Difficulty", "Hard_CostBias", 1, buffer));
+	}
+}
+
+
+
 /*
 **  DLL Interface
 ** 
@@ -1960,7 +2004,6 @@ void DLLExportClass::Set_Content_Directory(const char *content_directory)
 
 
 
-
 /**************************************************************************************************
 * DLLExportClass::Config
 *
@@ -1982,7 +2025,12 @@ void DLLExportClass::Config(const CNCRulesDataStruct& rules)
 		Rule.Diff[i].IsBuildSlowdown = rules.Difficulties[i].IsBuildSlowdown ? 1 : 0;
 		Rule.Diff[i].IsWallDestroyer = rules.Difficulties[i].IsWallDestroyer ? 1 : 0;
 		Rule.Diff[i].IsContentScan = rules.Difficulties[i].IsContentScan ? 1 : 0;
-	}	
+	}
+
+	//Rule.Diff[2].FirepowerBias = float(5.0);
+	//Rule.Diff[2].GroundspeedBias = float(5.0);
+
+	Falsify_Information();
 }
 
 

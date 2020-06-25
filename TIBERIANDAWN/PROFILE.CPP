@@ -136,6 +136,15 @@ int WWGetPrivateProfileInt(char const *section, char const *entry, int def, char
 }
 
 
+float WWGetPrivateProfileFloat(char const* section, char const* entry, double def, char* profile)
+{
+	char	buffer[32];			// Float staging buffer.
+	sprintf(buffer, "%f", def);
+	WWGetPrivateProfileString(section, entry, buffer, buffer, sizeof(buffer) - 1, profile);
+	return(atof(buffer));
+}
+
+
 /***********************************************************************************************
  * WWWritePrivateProfileInt -- Write a profile int to the profile data block.                    *
  *                                                                                             *
