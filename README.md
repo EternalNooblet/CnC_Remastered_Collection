@@ -1,5 +1,6 @@
 # Original Hard Mode
 Mod for C&C Remastered Collection 2020.
+> https://steamcommunity.com/sharedfiles/filedetails/?id=2139083900
 # Installation
 ## Steam
 Options:
