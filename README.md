@@ -8,7 +8,7 @@ Options:
 - Search for `Original Hard Mode` in-game. Go to Options->Mods->Workshop.
 ## Origin
 1. Manually download to your `Documents\CnCRemastered\Mods\Tiberian_Dawn\` folder.
-1. Get the zip here: [OriginalHardMode.zip]https://github.com/EternalNooblet/CnC_Remastered_Collection/raw/nooblet/OriginalHardMode.zip)
+1. Get the zip here: [OriginalHardMode.zip](https://github.com/EternalNooblet/CnC_Remastered_Collection/raw/nooblet/OriginalHardMode.zip)
 1. Extract the contents as such:
 ```bash
 Documents\CnCRemastered\Mods\Tiberian_Dawn\
