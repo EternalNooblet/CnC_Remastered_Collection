@@ -1,5 +1,5 @@
 # Original Hard Mode
-Mod for C&C Remastered Collection 2020.
+Mod for C&C Remastered Collection 2020. Allows you to set your own difficulty in the SYOD.INI file.
 > https://steamcommunity.com/sharedfiles/filedetails/?id=2139083900
 # Installation
 ## Steam
