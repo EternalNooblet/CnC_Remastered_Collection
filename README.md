@@ -11,10 +11,10 @@ Options:
 1. Extract the contents as such:
 ```bash
 Documents\CnCRemastered\Mods\Tiberian_Dawn\
--- Original Hard Mode\
-  -- ccmod.json
-  -- Data\
-    -- TiberianDawn.dll
-  -- CCDATA\
-    -- SYOD.INI
+└─ Original Hard Mode\
+  ├─ ccmod.json
+  ├─ Data\
+  |  └─ TiberianDawn.dll
+  └─ CCDATA\
+     └─ SYOD.INI
 ```
