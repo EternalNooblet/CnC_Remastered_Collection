@@ -3,4 +3,5 @@ This is the best farts mod for C&C Remastered Collection. Hands down. ~~Period.~
 
 # Proof??
 Here is your proof!
+
 ![Proof??](proof.gif)
