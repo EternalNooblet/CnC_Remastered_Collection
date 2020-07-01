@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="proof.gif" alt="drawing" width="50%"/>
+  <img src="title.png" alt="drawing" width="50%"/>
 </p>
 
 # Best Farts Mod
