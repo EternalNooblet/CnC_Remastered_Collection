@@ -255,7 +255,9 @@ struct SoundEffectNameStruct {
 	{"DINOATK1", 	10,	IN_NOVAR},	//	VOC_DINOATK1		Dino attack sound.
 	{"DINODIE1", 	10,	IN_NOVAR},	//	VOC_DINODIE1		Dino die sound.
 
-	{"LASER", 	10,	IN_NOVAR}	//	VOC_NUKE_LOB		Mod expansion unit firing sound
+		//_PRESET_UR_VOICE_PITCHED_DOWN_NON_LOCALIZED
+	{"CUSTOMMOVE1", 	10,	IN_NOVAR}	//	VOC_NUKE_LOB		Mod expansion unit firing sound
+
 #ifdef PETROGLYPH_EXAMPLE_MOD
 	{ "NUKE_LOB", 	10,	IN_NOVAR }	//	VOC_NUKE_LOB		Mod expansion unit firing sound
 #endif //PETROGLYPH_EXAMPLE_MOD

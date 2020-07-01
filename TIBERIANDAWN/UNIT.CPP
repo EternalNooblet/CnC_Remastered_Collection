@@ -3526,7 +3526,7 @@ void UnitClass::Response_Move(void)
 //		VOC_AFFIRM,
 //		VOC_AFFIRM
 //		VOC_SCREAM1,
-		VOC_NUKE_LOB
+		VOC_NEW_MOVE
 	};
 	VocType response = _response[Sim_Random_Pick(0, (int)(sizeof(_response) / sizeof(_response[0]))-1)];
 
