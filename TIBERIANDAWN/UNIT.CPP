@@ -3519,12 +3519,14 @@ void UnitClass::Response_Move(void)
 {
 	Validate();
 	static VocType _response[] = {
-		VOC_MOVEOUT,
-		VOC_MOVEOUT,
-		VOC_MOVEOUT,
-		VOC_ACKNOWL,
-		VOC_AFFIRM,
-		VOC_AFFIRM
+//		VOC_MOVEOUT,
+//		VOC_MOVEOUT,
+//		VOC_MOVEOUT,
+//		VOC_ACKNOWL,
+//		VOC_AFFIRM,
+//		VOC_AFFIRM
+//		VOC_SCREAM1,
+		VOC_NUKE_LOB
 	};
 	VocType response = _response[Sim_Random_Pick(0, (int)(sizeof(_response) / sizeof(_response[0]))-1)];
 
