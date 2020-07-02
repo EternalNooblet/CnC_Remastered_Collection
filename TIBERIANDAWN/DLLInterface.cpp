@@ -620,10 +620,55 @@ extern "C" __declspec(dllexport) bool __cdecl CNC_Get_Visible_Page(unsigned char
 }
 
 
+/*
+====================
+Console_Render
+====================
+*/
+void Console_Printf(const char fmt, ...) {
+	va_list        argptr;
+	char        msg[4096];
 
+	va_start(argptr, fmt);
+	//vsprintf(msg, fmt, argptr);
+	va_end(argptr);
 
+	//int len = strlen(msg);
+	//strcpy(&console_text[console_text_len], msg);
+
+	OutputDebugStringA(msg);
+	//console_text_len += len;
+}
+	//unsigned char fake_palette[768] = {204};
+	//memcpy(palette_in, fake_palette, sizeof(palette_in));
+	//CurrentPalette[a] = CurrentPalette[a] >= 64 ? 63 : CurrentPalette[a];
+
+char R[2], G[2], B[2];
+char RGB[6];
 extern "C" __declspec(dllexport) bool __cdecl CNC_Get_Palette(unsigned char(&palette_in)[256][3])
 {
+		
+	for (unsigned int a = 0; a < sizeof(palette_in); a++) {
+
+		if (a > 766) {
+			a = a;
+		}
+
+		switch (a % 3) {
+		case 0:
+			sprintf(R, "%02X", CurrentPalette[a]);
+			break;
+		case 1:
+			sprintf(G, "%02X", CurrentPalette[a]);
+			break;
+		case 2:
+			sprintf(B, "%02X", CurrentPalette[a]);
+			sprintf(RGB, "%s%s%s", R, G, B);
+			OutputDebugStringA(RGB);
+			break;
+		}
+	}
+
 	memcpy(palette_in, CurrentPalette, sizeof(palette_in));
 	return true;
 }

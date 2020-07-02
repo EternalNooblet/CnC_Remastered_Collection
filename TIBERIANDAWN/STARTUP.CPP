@@ -537,10 +537,10 @@ int DLL_Startup(const char * command_line_in)
 			/*
 			** Initialise MMX support if its available
 			*/
-			CCDebugString ("C&C95 - Entering MMX detection.\n");
-			if (MMXAvailable){
-				Init_MMX();
-			}
+//			CCDebugString ("C&C95 - Entering MMX detection.\n");
+//			if (MMXAvailable){
+//				Init_MMX();
+//			}
 
 			CCDebugString ("C&C95 - Creating mouse class.\n");
 			WWMouse = new WWMouseClass(&SeenBuff, 32, 32);
