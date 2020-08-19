@@ -1,0 +1,9 @@
+{
+	"name": "Original Hard Mode",
+	"description": "Launch day difficulty settings from before they were nerfed. Bonus feature: edit SYOD.INI and Set Your Own Difficulty.",
+	"author": "EternalNooblet",
+	"load_order": 2,
+	"version_low": 0,
+	"version_high": 1,
+	"game_type": "TD"
+}
